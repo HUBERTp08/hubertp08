@@ -1,0 +1,323 @@
+<think>
+1.  **Analyze the Request:**
+    *   **Target Audience/User:** High school AP Computer Science student named "Hubert".
+    *   **Format:** Single-file HTML (`index.html`).
+    *   **Components:** Header (Name), Bio Section, Projects Section (Link to GitHub).
+    *   **Desired Style:** Clean, modern styling (inside a `<style>` tag).
+    *   **Specific Link:** [https://github.com/HUBERTp08].
+
+2.  **Drafting Content:**
+    *   *Header:* "Hubert". Maybe a subtitle like "AP Computer Science Student".
+    *   *Bio:* Needs to sound like a high schooler interested in CS. Something about learning Java, Python, building apps, or web dev. "Passionate about coding, problem-solving, and technology."
+    *   *Projects:* Since it's a personal portfolio, I should include placeholders for projects. The prompt specifically asked for a link to the *GitHub repo*, but usually, projects have individual links. I will create a "Projects" section that links to the main GitHub profile as requested, perhaps listing specific project titles (placeholders) that would hypothetically be there, or just making the whole section a gateway to the GitHub.
+    *   *Footer:* Copyright, social links (maybe LinkedIn or Twitter if applicable, but GitHub is specified).
+
+3.  **Designing the Styling (CSS):**
+    *   *Font:* Sans-serif (Inter, Roboto, or system-ui).
+    *   *Color Palette:* Modern tech look. Dark mode is popular, but a clean light mode (white/off-white background, dark text, accent color like blue or teal) is safe and professional. Let's go with a soft dark theme or a very clean light theme. Let's do a "clean modern" look: white background, dark grey text, an accent color (e.g., #007bff - electric blue).
+    *   *Layout:* Flexbox or Grid. Centered container.
+    *   *Responsiveness:* Mobile-friendly (padding, font sizes).
+    *   *Specifics:*
+        *   Header: Big name, centered.
+        *   Cards for projects? Yes, cards look good.
+
+4.  **Writing the HTML Structure:**
+    *   `<!DOCTYPE html>`
+    *   `<html>`, `<head>`, `<body>`.
+    *   Inside `<head>`: Meta tags, Title, `<style>`.
+    *   Inside `<body>`:
+        *   `<header>`: `<h1>`Name. `<p>`Subtitle.
+        *   `<main>`:
+            *   `<section id="bio">`: Text.
+            *   `<section id="projects">`: List of projects.
+                *   Project 1 (Placeholder): "AP CSA Labs"
+                *   Project 2 (Placeholder): "Personal Website"
+                *   Link button styled as a primary button.
+        *   `<footer>`: Simple copyright.
+
+5.  **Refining the Code (Mental Walkthrough):**
+    *   *CSS Variables:* Use variables for colors to make it easy to tweak.
+    *   *Styling:*
+        *   `body`: `font-family: system-ui, sans-serif; line-height: 1.6; color: #333;`
+        *   `container`: `max-width: 800px; margin: 0 auto; padding: 2rem;`
+        *   `.project-card`: Border, padding, rounded corners, hover effect.
+        *   `a.button`: Background color, text decoration none, padding, border radius.
+
+6.  **Constructing the File:**
+
+    *   *Name:* Hubert
+    *   *GitHub:* https://github.com/HUBERTp08
+    *   *Placeholder Text:* I need to write generic text for "Projects" since I don't know what his actual projects are. I will use placeholders like "Project Alpha" or "Python Automation Script" and mention that they are placeholders.
+
+7.  **Final Polish:**
+    *   Ensure the code is self-contained.
+    *   Add comments explaining where to edit.
+    *   Make sure the contrast is good.
+
+    *(Self-Correction during drafting)*: The user asked for a link to the GitHub *repo* specifically [https://github.com/HUBERTp08]. I will make sure the primary call to action goes there.
+
+8.  **Final Code Assembly:** (Simulated output generation - similar to the provided good response).
+
+    *   *HTML:*
+        ```html
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+        ...styles...
+        </head>
+        <body>
+           <header>Hubert</header>
+           <section>Bio</section>
+           <section>Projects -> Link</section>
+        </body>
+        </html>
+        ```
+
+9.  **Output Generation:** (Proceed to generate the HTML block).
+
+**(Self-Correction on "Linking to repo"):** The prompt says "Projects section linking to my GitHub repo at [https://github.com/HUBERTp08]". I will make a button in the projects section that points to that URL.
+
+10. **Final Review against constraints:**
+    *   Single file? Yes.
+    *   Name included? Yes.
+    *   Bio included? Yes.
+    *   Projects section included? Yes.
+    *   Link included? Yes.
+    *   Modern styling? Yes.
+
+Let's write it.
+</think> is a single-file HTML portfolio for Hubert. You can save this code as `index.html` and open it in any web browser.
+
+I have used a clean, modern " card-based" layout with a responsive design that looks good on both phones and desktops.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hubert | AP Computer Science Student</title>
+    <style>
+        /* --- CSS Variables for Easy Theming --- */
+        :root {
+            --primary-color: #2563eb; /* Electric Blue */
+            --primary-hover: #1d4ed8;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --font-stack: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        /* --- Global Resets --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-stack);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* --- Layout Container --- */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            width: 100%;
+        }
+
+        /* --- Header Section --- */
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-top: 2rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -0.05rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* --- Bio Section --- */
+        .bio-section {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .bio-text {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* --- Projects Section --- */
+        .projects-section {
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .project-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary-color);
+        }
+
+        .project-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .project-info p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* --- Buttons / Links --- */
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.2s;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* --- Footer --- */
+        footer {
+            margin-top: auto;
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            border-top: 1px solid #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>Hubert</h1>
+            <p class="subtitle">AP Computer Science Student</p>
+        </header>
+
+        <!-- Bio Section -->
+        <section class="bio-section">
+            <p class="bio-text">
+                Hi! I'm Hubert, a high school student passionate about software development and problem-solving. 
+                I am currently learning Java and Python, building my skills in algorithms and data structures. 
+                I love creating tools that help people and experimenting with web technologies.
+            </p>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects-section">
+            <h2>My Projects</h2>
+            
+            <!-- Project 1: Placeholder -->
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>Console Calculator</h3>
+                    <p>A basic arithmetic calculator built with Python.</p>
+                </div>
+                <!-- Link points to your specific GitHub URL -->
+                <a href="https://github.com/HUBERTp08" target="_blank" class="btn btn-outline">View Code</a>
+            </div>
+
+            <!-- Project 2: Placeholder -->
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>Student Data Manager</h3>
+                    <p>ArrayList management system built in Java for AP CSA.</p>
+                </div>
+                <a href="https://github.com/HUBERTp08" target="_blank" class="btn btn-outline">View Code</a>
+            </div>
+
+             <!-- Project 3: Placeholder -->
+             <div class="project-card">
+                <div class="project-info">
+                    <h3>Personal Portfolio</h3>
+                    <p>This very website! Built with HTML and CSS.</p>
+                </div>
+                <a href="https://github.com/HUBERTp08" target="_blank" class="btn btn-outline">View Code</a>
+            </div>
+        </section>
+        
+        <!-- Direct Contact Button -->
+        <div style="text-align: center; margin-top: 2rem;">
+            <p style="margin-bottom: 10px; color: var(--text-muted);">Check out all my work:</p>
+            <a href="https://github.com/HUBERTp08" target="_blank" class="btn">Visit GitHub Profile</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Hubert. Built for AP Computer Science.</p>
+    </footer>
+
+</body>
+</html>
+```
